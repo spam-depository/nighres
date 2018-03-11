@@ -1,4 +1,5 @@
-FROM ubuntu:14.04
+FROM ubuntu:16.04
+RUN apt-get update -qq && apt-get install -y sudo
 RUN sudo apt-get update -qq && apt-get install -y python python-pip python-dev build-essential software-properties-common
 RUN sudo add-apt-repository ppa:openjdk-r/ppa && apt-get update -qq && apt-get install -y openjdk-8-jdk
 RUN ln -svT "/usr/lib/jvm/java-8-openjdk-$(dpkg --print-architecture)" /docker-java-home
